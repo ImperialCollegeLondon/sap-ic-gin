@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+	This session file quicky recreates the scene in a particular file from the GiN database, for illustration purposes only. The audio is generated from the waiter's position using the waiter's close-talking microphone, and is captured by a virtual binaural microphone at corrdinates (0,0,0).
+
+	This script can be greatly improved to generate an accurate acoustic reproduction of scenes in the GiN database. 
+-->
+
+<session attribution="Emilie d'Olne, Alastair H. Moore" loop="false" duration="60" playonload="true">
+
+	<scene name="main" guiscale="16">
+
+			<source name="speaker1" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker1_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker1_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.0" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="speaker2" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker2_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker2_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.1" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="speaker3" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker3_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker3_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.2" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="speaker4" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker4_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker4_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.3" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="speaker5" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker5_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker5_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.4" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="speaker6" mute="true">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker6_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker6_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" channel="0.5" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<source name="waiter">
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_waiter_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_waiter_rotation.csv"/>"
+<!-- 				<sound>
+					<plugins>
+						<sndfile name="DATAPATH/ROOMPLACEHOLDER/close_talking_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="105" />
+					</plugins>
+				</sound> -->
+			</source>
+
+			<receiver name="out" type="hrtf" >
+				<position importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker3_position.csv"/>
+				<orientation importcsv="DATAPATH/ROOMPLACEHOLDER/tracked_data_tascar/SESSIONPLACEHOLDER/TIMEPLACEHOLDER_speaker3_rotation.csv"/>"
+			</receiver>			
+	</scene>
+    <modules>
+        <route name="array" channels="2" >
+            <plugins>
+                <sndfile name="DATAPATH/ROOMPLACEHOLDER/array_audio/SESSIONPLACEHOLDER/TIMEPLACEHOLDER.wav" loop="0" levelmode="calib" level="125" channel="0" />
+            </plugins>
+        </route>
+    </modules> 
+	<connect src="render.main:out_l" dest="system:playback_1"/>
+	<connect src="render.main:out_r" dest="system:playback_2"/>
+    <connect src="array:out.0" dest="system:playback_1"/>
+	<connect src="array:out.1" dest="system:playback_2"/>
+
+</session>
