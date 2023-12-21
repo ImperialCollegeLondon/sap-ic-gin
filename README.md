@@ -14,7 +14,7 @@ brew install wget
 Then run the following in a terminal to download into `~/Downloads/GiNdata`
 ```bash
 # download the data
-filenames=("readme.txt" "GiNdata.zip" "GiNdata.z01" "GiNdata.z02" "GiNdata.z03" "GiNdata.z04" "GiNdata.z05" "GiNdata.z06" "GiNdata.z07" "GiNdata.z08")
+filenames=("GiNdata.zip" "GiNdata.z01" "GiNdata.z02" "GiNdata.z03" "GiNdata.z04" "GiNdata.z05" "GiNdata.z06" "GiNdata.z07" "GiNdata.z08")
 mkdir ${HOME}/Downloads/GiNdata/
 for i in {2..10}; do wget -O ${HOME}/Downloads/GiNdata/${filenames[$i]} --continue "https://data.hpc.imperial.ac.uk/resolve/?doi=13463&file=$(printf "%01d" $i)&access=rqf7-7rw6"; done;
 # unzip the archive
@@ -30,7 +30,7 @@ $downpath= $HOME + "\Downloads\GiNdata\";`
 $dataurl= "https://data.hpc.imperial.ac.uk/resolve/?doi=13463";`
 mkdir $downpath -ea 0;`
 `
-$filenames=@("readme.txt", "GiNdata.zip", "GiNdata.z01", "GiNdata.z02", "GiNdata.z03", "GiNdata.z04", "GiNdata.z05", "GiNdata.z06", "GiNdata.z07", "GiNdata.z08");`
+$filenames=@("GiNdata.zip", "GiNdata.z01", "GiNdata.z02", "GiNdata.z03", "GiNdata.z04", "GiNdata.z05", "GiNdata.z06", "GiNdata.z07", "GiNdata.z08");`
 `
 for ($i=2; $i -le 10; $i++){`
 $infile="{0}&file={1}&access=EMBARGOED" -f $dataurl, $i;`
@@ -40,6 +40,8 @@ Invoke-WebRequest $infile -OutFile $outfile;};`
 `
 cd $downpath;`
 cmd /c copy /b $downPath"GiNdata.z*" $downPath"GiNdataunsplit.zip";`
+unzip GiNdataunsplit.zip;`
+rm GiN*.z*;
 ```
 
 
