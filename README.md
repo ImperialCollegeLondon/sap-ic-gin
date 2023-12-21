@@ -16,7 +16,7 @@ Then run the following in a terminal to download into `~/Downloads/GiNdata`
 # download the data
 filenames=("GiNdata.zip" "GiNdata.z01" "GiNdata.z02" "GiNdata.z03" "GiNdata.z04" "GiNdata.z05" "GiNdata.z06" "GiNdata.z07" "GiNdata.z08")
 mkdir ${HOME}/Downloads/GiNdata/
-for i in {2..10}; do wget -O ${HOME}/Downloads/GiNdata/${filenames[$i]} --continue "https://data.hpc.imperial.ac.uk/resolve/?doi=13463&file=$(printf "%01d" $i)&access=rqf7-7rw6"; done;
+for i in {2..10}; do wget -O ${HOME}/Downloads/GiNdata/${filenames[$i]} --continue "https://data.hpc.imperial.ac.uk/resolve/?doi=13463&file=$(printf "%01d" $i)"; done;
 # unzip the archive
 cd ${HOME}/Downloads/GiNdata
 zip -s 0 GiNdata.zip --out unsplitGiNdata.zip; unzip unsplitGiNdata.zip
@@ -33,16 +33,12 @@ mkdir $downpath -ea 0;`
 $filenames=@("GiNdata.zip", "GiNdata.z01", "GiNdata.z02", "GiNdata.z03", "GiNdata.z04", "GiNdata.z05", "GiNdata.z06", "GiNdata.z07", "GiNdata.z08");`
 `
 for ($i=2; $i -le 10; $i++){`
-$infile="{0}&file={1}&access=EMBARGOED" -f $dataurl, $i;`
+$infile="{0}&file={1}" -f $dataurl, $i;`
 $outfile=$downpath+$filenames[$i-1];`
 Write-Output $infile;`
-Invoke-WebRequest $infile -OutFile $outfile;};`
-`
-cd $downpath;`
-cmd /c copy /b $downPath"GiNdata.z*" $downPath"GiNdataunsplit.zip";`
-unzip GiNdataunsplit.zip;`
-rm GiN*.z*;
+Invoke-WebRequest $infile -OutFile $outfile;};
 ```
+Then expand using an archiver (e.g. [7-Zip](https://www.7-zip.org/)).
 
 
 
