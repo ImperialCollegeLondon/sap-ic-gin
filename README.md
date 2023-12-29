@@ -204,4 +204,4 @@ Additionally, the [generate_vad.py](code/generate_vad.py) script contains an opt
 Please contact Emilie d'Olne at [emilie.dolne16@imperial.ac.uk](mailto:emilie.dolne16@imperial.ac.uk).
 
 ## License
-Creative Commons Attribution Non-Commercial 4.0 International public license agreement ([CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en)). See [LICENSE](LICENSE) for details.
+Creative Commons Attribution 4.0 International public license agreement ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)). See [LICENSE](LICENSE) for details.
