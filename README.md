@@ -191,13 +191,16 @@ Additionally, the [generate_vad.py](code/generate_vad.py) script contains an opt
 
 ## Citation
 ```
-@article{dOlne2023,
-  title={Group conversations in Noisy environments (GiN) - Multimedia recordings for location-aware speech enhancement},
-  author={d'Olne, Emilie and Moore, Alastair H and Naylor, Patrick A and Donley, Jacob and Tourbabin, Vladimir and Lunner, Thomas},
-  journal={IEEE Open Journal of Signal Processing},
-  year={2023},
-  doi={10.1109/OJSP.2023.3344379},
-}
+@article{dOlne2024,
+  author={d'Olne, Emilie and Moore, Alastair H. and Naylor, Patrick A. and Donley, Jacob and Tourbabin, Vladimir and Lunner, Thomas},
+  journal={IEEE Open Journal of Signal Processing}, 
+  title={Group Conversations in Noisy Environments (GiN) – Multimedia Recordings for Location-Aware Speech Enhancement}, 
+  year={2024},
+  volume={5},
+  number={},
+  pages={374-382},
+  doi={10.1109/OJSP.2023.3344379}}
+
 ```
 
 ## Contact
