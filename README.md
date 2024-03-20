@@ -11,12 +11,16 @@ Make sure wget is installed
 # on Mac OS
 brew install wget
 ```
+Ensure the Terminal uses the Bash shell by running
+```bash
+bash
+```
 Then run the following in a terminal to download into `~/Downloads/GiNdata`
 ```bash
 # download the data
 filenames=("GiNdata.zip" "GiNdata.z01" "GiNdata.z02" "GiNdata.z03" "GiNdata.z04" "GiNdata.z05" "GiNdata.z06" "GiNdata.z07" "GiNdata.z08")
 mkdir ${HOME}/Downloads/GiNdata/
-for i in {2..10}; do wget -O ${HOME}/Downloads/GiNdata/${filenames[$i-1]} --continue "https://data.hpc.imperial.ac.uk/resolve/?doi=13463&file=$(printf "%01d" $i)"; done;
+for i in {2..10}; do wget -O ${HOME}/Downloads/GiNdata/${filenames[$i-2]} --continue "https://data.hpc.imperial.ac.uk/resolve/?doi=13463&file=$(printf "%01d" $i)"; done;
 # unzip the archive
 cd ${HOME}/Downloads/GiNdata
 zip -s 0 GiNdata.zip --out unsplitGiNdata.zip; unzip unsplitGiNdata.zip
