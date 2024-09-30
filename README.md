@@ -79,7 +79,7 @@ The dataset contains the following data
 
 
 ## Dataset structure
-One or two recording sessions took place in each room, for a total of approximately 22 min per session. For ease of use, the data were cropped into 1 min segments and files were named with their time codes in the format `mm_ss_SSS`. For example, the file `room_403/reference_audio/session_1/03_00_000.wav` contains 1 min of audio data from the reference microphone for session 1 in room 403, starting at minute 3. The general dateset structure is as follows
+One or two recording sessions took place in each room, for a total of approximately 22 min per session. For ease of use, the data were cropped into 1 min segments and files were named with their time codes in the format `mm_ss_SSS`. For example, the file `room_403/reference_audio/session_1/03_00_000.wav` contains 1 min of audio data from the reference microphone for session 1 in room 403, starting at minute 3. The general dataset structure is as follows
 <pre>
 ┬── <kbd>array_irs.h5</kbd> (<em>file</em>): full acoustic impulse response for the glasses array.
 ├── <kbd>array_irs_v2.h5</kbd> (<em>file</em>): cropped acoustic impulse response for the glasses array.
