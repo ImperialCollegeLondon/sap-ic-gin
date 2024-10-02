@@ -38,7 +38,7 @@ $filenames=@("GiNdata.zip", "GiNdata.z01", "GiNdata.z02", "GiNdata.z03", "GiNdat
 `
 for ($i=2; $i -le 10; $i++){`
 $infile="{0}&file={1}" -f $dataurl, $i;`
-$outfile=$downpath+$filenames[$i-1];`
+$outfile=$downpath+$filenames[$i-2];`
 Write-Output $infile;`
 Invoke-WebRequest $infile -OutFile $outfile;};
 ```
